@@ -1,41 +1,38 @@
 body {
   font-family: Arial, sans-serif;
-  background: #0b3d2e;
-  color: white;
+  background: #f2f2f2;
   margin: 0;
+  padding: 0;
 }
 
 header {
+  background: #111;
+  color: white;
   padding: 20px;
-  background: #06291f;
+  text-align: center;
 }
 
-input {
+header input {
+  margin-top: 10px;
   padding: 10px;
-  width: 100%;
-  max-width: 300px;
+  width: 90%;
+  max-width: 400px;
+  border-radius: 5px;
+  border: none;
 }
 
 main {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 15px;
   padding: 20px;
 }
 
 .card {
-  background: #0f5132;
+  background: white;
   padding: 20px;
   text-align: center;
   border-radius: 10px;
+  font-weight: bold;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
-
-render(plataformas);
-
-busca.addEventListener("input", () => {
-  const texto = busca.value.toLowerCase();
-  render(plataformas.filter(p =>
-    p.nome.toLowerCase().includes(texto)
-  ));
-
-});
