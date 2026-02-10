@@ -1,0 +1,29 @@
+const plataformas = [
+  { nome: "BRtop", logo: "https://via.placeholder.com/100" },
+  { nome: "7brwin", logo: "https://via.placeholder.com/100" },
+  { nome: "AA123", logo: "https://via.placeholder.com/100" }
+];
+
+const cards = document.getElementById("cards");
+const busca = document.getElementById("busca");
+
+function render(lista) {
+  cards.innerHTML = "";
+  lista.forEach(p => {
+    cards.innerHTML += `
+      <div class="card">
+        <img src="${p.logo}">
+        <p>${p.nome}</p>
+      </div>
+    `;
+  });
+}
+
+render(plataformas);
+
+busca.addEventListener("input", () => {
+  const texto = busca.value.toLowerCase();
+  render(plataformas.filter(p =>
+    p.nome.toLowerCase().includes(texto)
+  ));
+});
