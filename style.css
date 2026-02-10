@@ -6,9 +6,9 @@ body {
 }
 
 header {
-  background: #111;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
   color: white;
-  padding: 20px;
+  padding: 30px 20px;
   text-align: center;
 }
 
@@ -32,9 +32,17 @@ main {
   background: white;
   padding: 20px;
   text-align: center;
-  border-radius: 10px;
+  border-radius: 12px;
   font-weight: bold;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  text-decoration: none;
+  color: #111;
+  transition: transform 0.2s, background 0.2s;
+}
+
+.card:hover {
+  background: #ffd700;
+  transform: scale(1.05);
 }
 
 .logo {
@@ -44,3 +52,4 @@ main {
   display: block;
   margin: 0 auto 15px;
 }
+
