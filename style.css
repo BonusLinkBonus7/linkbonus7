@@ -36,3 +36,9 @@ main {
   font-weight: bold;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
+
+.logo {
+  width: 120px;
+  display: block;
+  margin: 0 auto 10px;
+}
