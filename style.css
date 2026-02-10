@@ -1,22 +1,33 @@
-const plataformas = [
-  { nome: "BRtop", logo: "https://via.placeholder.com/100" },
-  { nome: "7brwin", logo: "https://via.placeholder.com/100" },
-  { nome: "AA123", logo: "https://via.placeholder.com/100" }
-];
+body {
+  font-family: Arial, sans-serif;
+  background: #0b3d2e;
+  color: white;
+  margin: 0;
+}
 
-const cards = document.getElementById("cards");
-const busca = document.getElementById("busca");
+header {
+  padding: 20px;
+  background: #06291f;
+}
 
-function render(lista) {
-  cards.innerHTML = "";
-  lista.forEach(p => {
-    cards.innerHTML += `
-      <div class="card">
-        <img src="${p.logo}">
-        <p>${p.nome}</p>
-      </div>
-    `;
-  });
+input {
+  padding: 10px;
+  width: 100%;
+  max-width: 300px;
+}
+
+main {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 15px;
+  padding: 20px;
+}
+
+.card {
+  background: #0f5132;
+  padding: 20px;
+  text-align: center;
+  border-radius: 10px;
 }
 
 render(plataformas);
@@ -26,4 +37,5 @@ busca.addEventListener("input", () => {
   render(plataformas.filter(p =>
     p.nome.toLowerCase().includes(texto)
   ));
+
 });
