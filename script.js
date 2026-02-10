@@ -1,20 +1,15 @@
-body {
-  background: #0b3d2e;
-  color: white;
-  font-family: Arial, sans-serif;
-  padding: 20px;
-}
+const busca = document.getElementById("busca");
+const cards = document.querySelectorAll(".card");
 
-h1 { text-align: center; }
+busca.addEventListener("input", () => {
+  const texto = busca.value.toLowerCase();
 
-#busca {
-  width: 100%;
-  padding: 10px;
-  border-radius: 8px;
-  border: none;
-  margin-bottom: 20px;
-}
-
+  cards.forEach(card => {
+    card.style.display = card.textContent.toLowerCase().includes(texto)
+      ? "block"
+      : "none";
+  });
+});
 #cards {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
@@ -27,5 +22,6 @@ h1 { text-align: center; }
   padding: 10px;
   text-align: center;
 }
+
 
 .card img { width: 80px; }
