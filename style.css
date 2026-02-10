@@ -38,7 +38,9 @@ main {
 }
 
 .logo {
-  width: 120px;
+  max-width: 300px;   /* controla o tamanho */
+  width: 100%;
+  height: auto;
   display: block;
-  margin: 0 auto 10px;
+  margin: 0 auto 15px;
 }
