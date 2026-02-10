@@ -1,12 +1,16 @@
 const busca = document.getElementById("busca");
 const cards = document.querySelectorAll(".card");
 
-busca.addEventListener("keyup", () => {
+busca.addEventListener("input", () => {
   const texto = busca.value.toLowerCase();
 
   cards.forEach(card => {
-    card.style.display = card.textContent.toLowerCase().includes(texto)
-      ? "block"
-      : "none";
+    const nome = card.textContent.toLowerCase();
+
+    if (nome.includes(texto)) {
+      card.style.display = "block";
+    } else {
+      card.style.display = "none";
+    }
   });
 });
